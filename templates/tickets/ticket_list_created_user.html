@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div>
+      <h1>Tickets Submitted</h1>
+    </div>
+    <div>
+    {% if ticket_list %}
+    <ul>
+
+      {% for ticket in ticket_list %} 
+      <li>
+        <a href="{{ticket.get_absolute_url}}">{{ticket.title}}</a> ({{ ticket.date_created }})        
+      </li>
+      {% endfor %}
+    </ul>
+    </div>
+    {% else %}
+      <p>There are no tickets submitted.</p>
+    {% endif %}       
+{% endblock %}

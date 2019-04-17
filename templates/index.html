@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  {% block title %}<title>Online Helpdesk</title>{% endblock %}
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+  {% load static %}
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">Online Ticketing System</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">{{request.user}}
+            <strong></strong>
+          </span>
+          <span class="user-role">Warden</span>
+          
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Tickets</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="{% url 'my-tickets' %}">My Tickets
+                  </a>
+                </li>
+                <li>
+                    <a href="#">New Ticket</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+          
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="far fa-gem"></i>
+              <span>Components</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li title="Framework used for the web application">
+                  <a href="https://www.djangoproject.com/">Django</a>
+                </li>
+                <li title="Online hosting of our Application">
+                  <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>
+                </li>
+                <li title="Email host for password reset">
+                  <a href="https://sendgrid.com/">Sendgrid</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          
+          <li class="header-menu">
+            <span>Extra</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-book"></i>
+              <span>Documentation</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Site Authors</span>
+            </a>
+            <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="#">Michelle</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tinotendazungura">Tinotenda Zungura</a>
+                  </li>
+                  <li>
+                     <a href="#">Thembie</a>
+                  </li>
+                  <li>
+                    <a href="#">Sam</a>
+                  </li>
+                </ul>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      
+      <a title = "Logout" href="{% url 'logout' %}">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
+      <h2>OHD</h2>
+      <hr>
+      <div class="row">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+      <hr>
+      <div class="row">
+                
+      </div>
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script>
+
+  
+
+<script  src="../static/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

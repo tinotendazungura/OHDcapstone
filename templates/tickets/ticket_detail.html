@@ -1,0 +1,11 @@
+{% extends 'tickets/base.html' %}
+
+{% block content %}
+  <h1>Title: {{ ticket.title }}</h1>
+
+  <p><strong>Submitter:</strong> {{ object.submitter }}</p> 
+  <p><strong>Summary:</strong> {{ object.summary }}</p>
+  <p><strong>Urgency:</strong> {{ object.urgency }}</p> 
+  <p><strong>Department:</strong> {{object.department}}</p>
+    
+{% endblock %}
